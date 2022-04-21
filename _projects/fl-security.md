@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
-img: assets/img/3.jpg
-importance: 2
-category: work
+title: 联邦学习安全
+description:
+img: assets/img/10.jpg
+importance: 1
+category: FL
 ---
 
 Every project has a beautiful feature showcase page.

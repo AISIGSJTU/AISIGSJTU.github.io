@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: 对抗学习
+description:
+img: assets/img/7.jpg
 importance: 1
-category: work
+category: AI
 ---
 
 Every project has a beautiful feature showcase page.

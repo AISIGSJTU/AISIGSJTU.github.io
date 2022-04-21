@@ -1,11 +1,12 @@
 ---
 layout: page
-title: projects
+title: 项目
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false
-display_categories: [work, fun]
+description:
+nav: true
+display_categories: [Serverless, FL, AI]
 horizontal: false
+importance: 2
 ---
 
 <!-- pages/projects.md -->
