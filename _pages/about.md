@@ -8,5 +8,6 @@ news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
+## 研究方向
 
-TODO: add introduction to the group
+TODO

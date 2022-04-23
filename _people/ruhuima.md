@@ -8,7 +8,7 @@ title: 马汝辉
         {% include figure.html path="assets/img/avatar/ruhuima.jpg" class="img-fluid rounded z-depth-1"%}
     </div>
     <div class="col-6">
-        <h4><a href="/people/ruhuima">马汝辉</a></h4>
+        <h4>马汝辉</a></h4>
         <span>副研究员</span><br />
         <span>邮件: ruhuima at sjtu.edu.cn</span> <br />
         <span>办公室: 电院3号楼229</span>
