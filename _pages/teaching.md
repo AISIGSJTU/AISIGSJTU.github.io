@@ -2,7 +2,7 @@
 layout: page
 title: 课程
 nav: true
-nav_order: 6
+nav_order: 3
 dropdown: true
 children: 
     - title: 离散数学(2023)
