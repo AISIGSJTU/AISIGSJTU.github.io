@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>todo | SJTU  AISIG</title>
+    <title>云计算 | SJTU  AISIG</title>
     <meta name="author" content="SJTU  AISIG">
-    <meta name="description" content="todo">
+    <meta name="description" content="2023年秋云计算（ICE6405P）课程网站">
 
 
     <!-- Bootstrap & MDB -->
@@ -117,8 +117,8 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">todo</h1>
-            <p class="post-description">todo</p>
+            <h1 class="post-title">云计算</h1>
+            <p class="post-description">2023年秋云计算（ICE6405P）课程网站</p>
           </header>
 
           <article>
@@ -136,7 +136,14 @@
 
 <ul id="markdown-toc">
   <li><a href="#%E8%AF%BE%E7%A8%8B%E9%80%9A%E7%9F%A5--news" id="markdown-toc-课程通知--news">课程通知 / News</a></li>
-  <li><a href="#%E8%AF%BE%E7%A8%8B%E6%9D%90%E6%96%99--material" id="markdown-toc-课程材料--material">课程材料 / Material</a></li>
+  <li><a href="#%E8%AF%BE%E7%A8%8B%E6%9D%90%E6%96%99--lecture" id="markdown-toc-课程材料--lecture">课程材料 / Lecture</a></li>
+  <li><a href="#%E5%AE%9E%E8%B7%B5%E8%AF%BE%E6%9D%90%E6%96%99--hands-on" id="markdown-toc-实践课材料--hands-on">实践课材料 / Hands-on</a></li>
+  <li>
+<a href="#%E5%AE%9E%E8%B7%B5%E4%BD%9C%E4%B8%9A--homework" id="markdown-toc-实践作业--homework">实践作业 / Homework</a>    <ul>
+      <li><a href="#%E4%BD%9C%E4%B8%9A%E4%B8%80" id="markdown-toc-作业一">作业一</a></li>
+      <li><a href="#%E4%BB%BB%E5%8A%A1%E4%BA%8C" id="markdown-toc-任务二">任务二</a></li>
+    </ul>
+  </li>
 </ul>
 
 <p><br></p>
@@ -149,7 +156,7 @@
 
 <p><br></p>
 
-<h3 id="课程材料--material">课程材料 / Material</h3>
+<h3 id="课程材料--lecture">课程材料 / Lecture</h3>
 
 <ul>
   <li><a href="/assets/course/2023/ice6405p/lec1.pdf">Lecture 1</a></li>
@@ -157,6 +164,51 @@
 </ul>
 
 <p><br></p>
+
+<h3 id="实践课材料--hands-on">实践课材料 / Hands-on</h3>
+
+<ul>
+  <li><a href="/assets/course/2023/ice6405p/handson1.pdf">Hands-on 1</a></li>
+</ul>
+
+<p><br></p>
+
+<h3 id="实践作业--homework">实践作业 / Homework</h3>
+
+<h4 id="作业一">作业一</h4>
+
+<p>本次作业分为任务一和任务二，占总成绩的10%。作业截止时间为11月5日23:59。</p>
+
+<p><strong>任务一</strong></p>
+
+<p>在LeNet的基础上，进行以下研究：</p>
+<ul>
+  <li>将平均汇聚层替换为最大汇聚层，会发生什么？</li>
+  <li>尝试构建一个基于LeNet的更复杂的网络，以提高其准确性。
+    <ul>
+      <li>调整卷积窗口大小。</li>
+      <li>调整输出通道的数量。</li>
+      <li>调整激活函数（如ReLU）。</li>
+      <li>调整卷积层的数量。</li>
+      <li>调整全连接层的数量。</li>
+      <li>调整学习率和其他训练细节（例如，初始化和轮数）。</li>
+    </ul>
+  </li>
+  <li>在MNIST、FashionMNIST等数据集上尝试以上改进的网络，分析结果变化的原因，总结经验。</li>
+  <li>显示不同输入（例如毛衣和外套）时，LeNet第一层和第二层的激活值。尝试解释。</li>
+</ul>
+
+<p>作业提交：实验报告+源代码</p>
+
+<h4 id="任务二">任务二</h4>
+<p>在Transformer的基础上，自选问题进行研究。</p>
+<ul>
+  <li>将Transformer的结构中，是先进行残差连接再进行LayerNorm操作的。尝试替换顺序，观察网络性能变化结果，并结合相关文献分析原因。</li>
+  <li>Transformer最初设计是被用于自然语言处理任务中的。调研相关文献，研究将Transformer网络结构应用到计算机视觉领域的方案，分析其相对于CNN的优劣。</li>
+  <li>其他，合理即可。</li>
+</ul>
+
+<p>作业提交：实验报告+源代码（如有）</p>
 
           </article>
 
