@@ -1,13 +1,13 @@
 ---
 layout: page
-title: 课程
+title: 链接
 nav: true
 nav_order: 3
 dropdown: true
 children: 
-    - title: 离散数学(2023)
-      permalink: /teaching/CS2501-23/
+    - title: 内部论坛
+      permalink: /forum
     - title: divider
-    - title: 云计算(2023)
-      permalink: /teaching/ICE6405P-260-23/
+    - title: 代码托管
+      permalink: /gitlab
 ---
