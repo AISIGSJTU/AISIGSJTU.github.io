@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://aisigsjtu.github.io/sitemap.xml
+Sitemap: https://icloud.sjtu.edu.cn/sitemap.xml
