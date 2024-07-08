@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 激烈漂流与美食比拼：云计算团队的阳羡之旅
-date: 2024-06-30 18:00:00-0400
+date: 2024-06-30 18:00:00+0800
 inline: false
 related_posts: false
 ---
@@ -12,7 +12,9 @@ related_posts: false
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html loading="eager" path="assets/img/2024_06_30_team_building1.jpg" title="team building1" class="img-fluid rounded z-depth-1" %}
+        <div class="text-center">
+            {% include figure.html loading="eager" path="assets/img/2024_06_30_team_building1.jpg" title="team building1" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
 
@@ -20,7 +22,9 @@ related_posts: false
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html loading="eager" path="assets/img/2024_06_30_team_building2.jpg" title="team building2" class="img-fluid rounded z-depth-1" %}
+        <div class="text-center">
+            {% include figure.html loading="eager" path="assets/img/2024_06_30_team_building2.jpg" title="team building2" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
 
@@ -28,7 +32,9 @@ related_posts: false
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html loading="eager" path="assets/img/2024_06_30_team_building3.jpg" title="team building3" class="img-fluid rounded z-depth-1" %}
+        <div class="text-center">
+            {% include figure.html loading="eager" path="assets/img/2024_06_30_team_building3.jpg" title="team building3" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
 
