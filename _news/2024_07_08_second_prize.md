@@ -10,7 +10,7 @@ related_posts: false
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html loading="eager" path="assets/img/2024_07_08_second_prize1.png" title="second prize1" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html loading="eager" path="assets/img/2024_07_08_second_prize1.jpg" title="second prize1" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -19,7 +19,7 @@ related_posts: false
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html loading="eager" path="assets/img/2024_07_08_second_prize2.png" title="second prize2" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html loading="eager" path="assets/img/2024_07_08_second_prize2.jpg" title="second prize2" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
