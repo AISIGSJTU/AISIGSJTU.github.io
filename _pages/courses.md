@@ -1,7 +1,8 @@
+---
 layout: page
 title: 课程
 nav: true
-nav_order: 3
+nav_order: 4
 dropdown: true
 children: 
     - title: 离散数学
