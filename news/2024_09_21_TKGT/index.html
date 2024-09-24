@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>加入我们 | 云计算智能融合团队</title>
+    <title>论文TKGT:Redefinition and A New Way of Text-to-Table Tasks Based on Real World Demands and Knowledge Graphs Augmented LLMs被2024 Conference on Empirical Methods in Natural Language Processing（CCF-B）会议接收，恭喜沛文！ | 云计算智能融合团队</title>
     <meta name="author" content="iCLOUD  SJTU">
     <meta name="description" content="#TODO
 ">
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://icloud.sjtu.edu.cn/join/">
+    <link rel="canonical" href="https://icloud.sjtu.edu.cn/news/2024_09_21_TKGT/">
     
     <!-- Dark Mode -->
     
@@ -97,8 +97,8 @@
                   <a class="dropdown-item" href="/ICE6405P-260">云计算</a>
                 </div>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/join/">加入我们<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/join/">加入我们</a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -124,29 +124,116 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- page.html -->
-        <div class="post">
+      <!-- _layouts/post.html -->
 
-          <!-- <header class="post-header">
-            <h1 class="post-title">加入我们</h1>
-            <p class="post-description"></p>
-          </header> -->
+<div class="post">
 
-          <article>
-            <p>我们期待优秀的新成员加入我们团队！现面向国内外招收研究生（博士生、硕士生）！</p>
+  <header class="post-header">
+    <h1 class="post-title">论文TKGT:Redefinition and A New Way of Text-to-Table Tasks Based on Real World Demands and Knowledge Graphs Augmented LLMs被2024 Conference on Empirical Methods in Natural Language Processing（CCF-B）会议接收，恭喜沛文！</h1>
+    <p class="post-meta">September 21, 2024</p>
+    <p class="post-tags">
+      <a href="/blog/2024"> <i class="fas fa-calendar fa-sm"></i> 2024 </a>
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="论文主题内容介绍">论文主题内容介绍</h2>
+
+<h3 id="研究背景">研究背景</h3>
+
+<p>从非结构化或半结构化文本中提取结构化信息对自然语言处理具有重要意义，因为它意味着通过基于规则、统计或深度学习的方法提取有价值的信息来压缩文本并服务下游应用。然而，文本到表格任务的重要性和难度被低估了。目前使用的数据集通常结构简单、虚构，而不是来自现实世界的需求。相比之下，表格数据是定量统计分析的重要基础，在各个领域都具有巨大的价值，包括商业智能、自然科学和社会科学。</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2024_09_21_data-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2024_09_21_data-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2024_09_21_data-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2024_09_21_data.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+现有数据集统计V-Shape和L-Shape特性
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2024_09_21_dataset-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2024_09_21_dataset-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2024_09_21_dataset-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2024_09_21_dataset.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+CPL数据集概览
+</div>
+
+<p>我们在本文中分析了以往数据集的局限性，并重新定义了文本到表格的任务，在此基础上，我们提出了一个新的数据集，称为CPL（中国民间借贷），来自一个现实世界的法律学术项目。我们进一步提出了TKGT，这是一种两阶段的领域感知pipline：</p>
+
+<ol>
+  <li>首先使用混合信息提取（mixed IE）方法从原始文本中半自动生成领域知识图（KG）类；</li>
+  <li>在KG类的指导下，采用混合检索增强生成（Hybird RAG）方法将其转换为下游需求的表。</li>
+</ol>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2024_09_21_architecture-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2024_09_21_architecture-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2024_09_21_architecture-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2024_09_21_architecture.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+TKGT两阶段Pipeline框架
+</div>
+
+<p>实验结果表明，TKGT在传统数据集如Rotowire和我们提出的CPL上都达到了SOTA表现。</p>
+
+<h2 id="蒋沛文个人介绍">蒋沛文个人介绍</h2>
 
 <ul>
-  <li>如果您对我们的研究领域感兴趣，请随时通过电子邮件与马汝辉联系。</li>
-  <li>每年均有博士和硕士名额。</li>
-  <li>欢迎未毕业的本科生来我们实验室进行实习。</li>
+  <li>本科毕业学校：浙江大学</li>
+  <li>研究方向：大模型推理系统和应用算法</li>
 </ul>
 
-<p>地址: 电信学院3号楼229室、东309。</p>
-
-
-          </article>
-
-        </div>
+  </article>
+</div>
 
     </div>
 

@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>加入我们 | 云计算智能融合团队</title>
+    <title>论文MemoriaNova:Optimizing Memory-Aware Model Inference for Edge Computing被ACM Transactions on Architecture and Code Optimization (CCF-A)期刊接收，恭喜仁均！ | 云计算智能融合团队</title>
     <meta name="author" content="iCLOUD  SJTU">
     <meta name="description" content="#TODO
 ">
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://icloud.sjtu.edu.cn/join/">
+    <link rel="canonical" href="https://icloud.sjtu.edu.cn/news/2024_09_20_taco/">
     
     <!-- Dark Mode -->
     
@@ -97,8 +97,8 @@
                   <a class="dropdown-item" href="/ICE6405P-260">云计算</a>
                 </div>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/join/">加入我们<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/join/">加入我们</a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -124,29 +124,81 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- page.html -->
-        <div class="post">
+      <!-- _layouts/post.html -->
 
-          <!-- <header class="post-header">
-            <h1 class="post-title">加入我们</h1>
-            <p class="post-description"></p>
-          </header> -->
+<div class="post">
 
-          <article>
-            <p>我们期待优秀的新成员加入我们团队！现面向国内外招收研究生（博士生、硕士生）！</p>
+  <header class="post-header">
+    <h1 class="post-title">论文MemoriaNova:Optimizing Memory-Aware Model Inference for Edge Computing被ACM Transactions on Architecture and Code Optimization (CCF-A)期刊接收，恭喜仁均！</h1>
+    <p class="post-meta">September 20, 2024</p>
+    <p class="post-tags">
+      <a href="/blog/2024"> <i class="fas fa-calendar fa-sm"></i> 2024 </a>
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="论文主题内容介绍">论文主题内容介绍</h2>
+
+<h3 id="研究背景">研究背景</h3>
+
+<p>近年来，随着各行业对边缘计算的需求不断增加，把深度学习模型部署在边缘设备上应用得越来越广泛。从工业自动化、智能监控和到医疗保健行业，边缘设备广泛应用于实时数据分析和决策。然而，在边缘设备上部署深度学习模型的现有方法面临两个挑战。第一个挑战是在处理有向无环图结构模型时，使用简单的策略处理算子执行顺序，可能导致内存资源的潜在浪费。第二个挑战是优化模型时通常对模型中的算子进行逐个处理以优化推理延迟，这可能导致优化问题陷入局部最优解。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>（1）针对算子执行顺序导致内存资源的潜在浪费问题，我们提出并实现了BTSearch算法。BTSearch是一个图状态回溯算法，它遍历有向无环图（DAG）结构模型中的所有拓扑排序，保证找到深度学习模型的最优算子执行顺序。该执行顺序在不考虑算子划分的情况下，具有最小的整体内存开销，从而扩大了算子划分优化的搜索空间。BTSearch应用了一种高效的剪枝策略，通过计算图的状态来剪除不可能产生更好结果的分支。</p>
+
+<p>（2）针对优化推理延迟陷入局部最优解问题，我们提出并实现了GenEFlow算法。GenEFlow是一种基于遗传算法的方法，旨在在满足边缘设备内存约束的前提下优化推理延迟。我们将整个模型的划分决策建模为染色体，并考虑不同的算子划分维度，从而构建了更全面的搜索空间。通过这些设计，GenEFlow能够从全局角度搜索最优解。此外，我们使用约束违例参数来保证内存约束的满足。</p>
+
+<h3 id="设计概述">设计概述</h3>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2024_09_20_MemoriaNova-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2024_09_20_MemoriaNova-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2024_09_20_MemoriaNova-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2024_09_20_MemoriaNova.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+MemoriaNova系统组成图
+</div>
+
+<p>MemoriaNova是一种专门针对边缘设备优化深度学习模型的综合性方法。图中展示了MemoriaNova的总体框架，主要由BTSearch与GenEFlow的组成。BTSearch是一种图状态回溯算法，用于探索目标深度学习模型的计算图，找出最佳的算子执行顺序，进而扩展GenEFlow的搜索空间。随后，基于硬件的具体规格和已确定的执行顺序，GenEFlow利用BTSearch提供的信息来优化模型的并行配置。GenEFlow在路由器-边缘设备架构下运行，考虑了广播和点对点通信方式，将算子切分优化抽象为染色体配置，并通过构建搜索空间、定义目标函数，利用遗传算法对配置进行迭代优化。该算法在固定设备配置下，通过遗传算法最优化分布式系统中模型的推理延迟。整个过程旨在在满足各设备内存限制的前提下，最大限度地减少推理延迟。</p>
+
+<h3 id="实验结果">实验结果</h3>
+
+<p>我们对VGG13，ResNet50，InceptionV3，MobileNetV3，SqueezeNet，GoogLeNet，RegNet，BERT，GPT-2和Qwen2十一个模型进行了全面的内存占用和推理延迟实验，主要包括BTSearch相较于其他方法的内存优化效果实验、相同配置下比较了GenEFlow与其他方法的推理延迟优化效果实验、设定了不同的设备内存限制以验证模型推理优化的最低内存需求实验、改变设备数量和异构配置评估GenEFlow在多种模型上的推理延迟实验、在真实环境中比较GenEFlow与其他方法的推理延迟优化效果。实验结果表明，BTSearch可以实现最高12%的内存优化，而GenEFlow在具有四个边缘设备的分布式系统中将推理延迟减少了最大33.9%。</p>
+
+<h2 id="张仁均个人介绍">张仁均个人介绍</h2>
 
 <ul>
-  <li>如果您对我们的研究领域感兴趣，请随时通过电子邮件与马汝辉联系。</li>
-  <li>每年均有博士和硕士名额。</li>
-  <li>欢迎未毕业的本科生来我们实验室进行实习。</li>
+  <li>本科毕业学校：火箭军工程大学</li>
+  <li>研究方向：云计算、深度学习大模型</li>
+  <li>荣誉奖励：
+    <ul>
+      <li>2017-2018学年全国大学生电子设计大赛全国二等奖</li>
+      <li>2017-2018学年全国大学生电子设计大赛陕西赛区一等奖</li>
+      <li>2017-2018学年全国大学生恩智浦智能车大赛团体二等奖</li>
+      <li>2016-2017学年飞思卡尔智能车大赛摄像头组西部赛区二等奖</li>
+    </ul>
+  </li>
 </ul>
 
-<p>地址: 电信学院3号楼229室、东309。</p>
-
-
-          </article>
-
-        </div>
+  </article>
+</div>
 
     </div>
 
