@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 新闻
 permalink: /news/
+title: 新闻
 nav: true
-nav_order: 5
+nav_order: 2
 ---
 
 {% include news.html %}
