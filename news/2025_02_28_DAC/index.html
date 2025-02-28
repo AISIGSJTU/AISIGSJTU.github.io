@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h2 id="论文主题内容介绍">论文主题内容介绍</h2>
+
+<h3 id="研究背景">研究背景</h3>
+
+<p>随着无服务器计算的日益普及，传统资源分配方式将CPU和内存耦合，对于所有函数并非最优。解耦资源的方法虽然提供了一定的灵活性，但无法有效应对无服务器工作流庞大的配置空间和复杂性。现有方法，如贝叶斯优化，虽然可以用于单个函数的资源分配，但在工作流场景下效率低下，搜索时间长且结果不稳定。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>论文提出了AARC框架，旨在为无服务器工作流实现自动化和亲和性感知的资源配置，其核心在于解耦计算和存储资源，提高资源配置的灵活性和效率。AARC框架主要由两个关键组件构成：</p>
+
+<ul>
+  <li>
+<strong>Graph-Centric Scheduler (图中心调度器)</strong>：该组件负责解析工作流，识别工作流中的关键路径，并为后续的资源配置确定优先级顺序。</li>
+  <li>
+<strong>Priority Configurator (优先级配置器)</strong>：该组件应用优先级调度技术，根据关键路径和子路径的特性，优化CPU和内存资源的分配，以达到成本效益和满足服务级别目标（SLO）的目的。</li>
+</ul>
+
+<h3 id="设计概述">设计概述</h3>
+
+<p>AARC框架的核心架构包含Graph-Centric Scheduler和Priority Configurator两个主要组件。当开发者提交包含服务级别目标（SLO）的工作流定义后，Graph-Centric Scheduler首先对用户定义的工作流进行分析，通过输入进行性能剖析，计算工作流中每个函数的运行时长。这些运行时长被用作权重，将工作流转换为加权有向无环图（DAG）。随后，调度器从加权DAG中提取关键路径及其SLO，并将这些信息传递给Priority Configurator。Priority Configurator通过优先级调度，逐步调整关键路径上每个函数的内存和CPU分配，从而确定满足SLO的最优资源配置。</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025_02_27_figure1-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025_02_27_figure1-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025_02_27_figure1-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025_02_27_figure1.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+Fig 1. System Architecture.
+</div>
+
+<p>Graph-Centric Scheduler采用“总体调度算法”处理工作流和SLO，执行基于关键路径的工作流分解。算法首先为工作流中的每个函数分配一个过量配置的基准配置，以确保在大多数情况下工作流能够满足SLO。然后执行工作流，并使用每个函数的运行时作为DAG中的权重来识别关键路径。关键路径和端到端SLO被用作Priority Configurator的输入，生成关键路径上每个函数的优化配置。通过完整的DAG遍历，算法识别与关键路径相连的子路径，并为每个子路径计算子SLO，确保关键路径的一致性。</p>
+
+<p>Priority Configurator则使用“优先级配置算法”，采用优先级调度来优化顺序执行函数路径的配置，同时满足SLO限制。算法初始化一个优先级队列PQ来管理每个函数的操作，这些操作包括调整CPU和内存配额。根据操作类型，算法修改函数的资源，持续执行来自PQ的操作，并监控运行时和成本的影响。如果操作违反SLO或增加成本，算法会撤销资源调整。同时，指数退避机制减小步长以确保收敛，并避免过度调度。</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025_02_27_figure2-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025_02_27_figure2-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025_02_27_figure2-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025_02_27_figure2.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+Fig2. Detailed Algorithms.
+</div>
+
+<h2 id="实验结果">实验结果</h2>
+
+<p>实验结果表明，AARC在配置搜索过程中，与贝叶斯优化和MAFF等现有方法相比，显著减少了总运行时间，分别降低了85.8%和89.6%。在各自算法的最优配置下，AARC在满足SLO要求的同时，实现了显著的成本节约，分别降低了49.6%和61.7%。与贝叶斯优化方法相比，AARC的优先级调度策略能够更稳定地找到合适的解耦资源配置。与MAFF的比例配置方法相比，AARC的解耦资源分配能够获得成本更低的配置。这些结果验证了AARC在自动化、高效地为无服务器工作流配置解耦资源方面的有效性。</p>
+
+<h2 id="金凌啸个人介绍">金凌啸个人介绍</h2>
+
+<ul>
+  <li>本科毕业院校：上海交通大学</li>
+  <li>研究方向：Severless范式，资源配置</li>
+  <li>荣誉奖励：
+    <ul>
+      <li>2020年ACM-CCPC中国大学生程序设计竞赛绵阳站金奖</li>
+      <li>2020年ACM-ICPC国际大学生程序设计竞赛上海赛区金奖</li>
+      <li>2022年华为第六届云核编程大赛亚军</li>
+      <li>2023年上海交通大学“校优秀毕业生”</li>
+      <li>2021年上海交通大学学生社会实践“先进个人”</li>
+    </ul>
+  </li>
+</ul>
+</body></html>
